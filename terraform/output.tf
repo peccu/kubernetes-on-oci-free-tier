@@ -6,6 +6,14 @@ output "master_hostname" {
   value = oci_core_instance.master.hostname_label
 }
 
+output "master_subnet_dns_label" {
+  value = oci_core_subnet.master.dns_label
+}
+
+output "vcn_dns_label" {
+  value = oci_core_virtual_network.this.dns_label
+}
+
 output "worker_ip" {
   value = oci_core_instance.worker.public_ip
 }
