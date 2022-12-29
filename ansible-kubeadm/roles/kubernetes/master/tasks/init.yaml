@@ -13,8 +13,7 @@
   when: reset_cluster is succeeded
   shell: |
     kubeadm init --config "/etc/kubernetes/kubeadm-config.yaml" \
-                 --upload-certs \
-                 --ignore-preflight-errors=Swap,Mem
+                 --upload-certs
   register: init_cluster
 
 - name: Generate certificate key
