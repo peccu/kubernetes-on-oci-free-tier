@@ -46,3 +46,21 @@ cp ../ansible-kubeadm/hosts.ini ../ansible-k3s/hosts.ini
 cat > ../hosts-sample <<EOF
 ${MASTER_IP}  ${MASTER_FQDN}
 EOF
+
+cat > ../ssh-config-sample <<EOF
+# OCI Kubernetes cluster
+Host master
+  Hostname ${MASTER_IP}
+  User ${OS_USER}
+  IdentityFile ${SSH_PRIVATE_KEY}
+
+Host worker
+  Hostname ${WORKER_IP}
+  User ${OS_USER}
+  IdentityFile ${SSH_PRIVATE_KEY}
+
+Host worker2
+  Hostname ${WORKER_IP2}
+  User ${OS_USER}
+  IdentityFile ${SSH_PRIVATE_KEY}
+EOF

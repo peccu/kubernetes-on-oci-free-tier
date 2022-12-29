@@ -1,7 +1,10 @@
 #!/bin/bash
 echo "# now you can use kubectl with these configurations"
+echo "## update DNS record"
 echo "cat hosts-sample >> /etc/hosts"
+echo "## apply kubeadm config"
 echo "export KUBECONFIG=~/admin.conf"
 echo "# or"
 echo "mv ~/admin.conf ~/.kube/config"
-
+echo "## set ssh config if you need"
+echo "cat ssh-config-sample >> ~/.ssh/config"
