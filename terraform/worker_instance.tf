@@ -24,5 +24,5 @@ resource "oci_core_instance" "worker" {
     tags      = "group:worker"
   }
 
-  freeform_tags = map("worker", "true")
+  freeform_tags = tomap({"worker": true})
 }

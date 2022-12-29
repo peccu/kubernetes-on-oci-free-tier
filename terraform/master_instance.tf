@@ -26,5 +26,5 @@ resource "oci_core_instance" "master" {
     tags      = "group:master"
   }
 
-  freeform_tags = map("master", "true")
+  freeform_tags = tomap({"master": true})
 }
