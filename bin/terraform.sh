@@ -8,16 +8,17 @@ terraform init
 terraform apply  -auto-approve -var-file=main.tfvars
 terraform output
 
-MASTER_IP=$(terraform output -json | jq -r '.master_ip.value')
-MASTER_HOSTNAME=$(terraform output -json | jq -r '.master_hostname.value')
-MASTER_SUBNET_DNS_LABEL=$(terraform output -json | jq -r '.master_subnet_dns_label.value')
-VCN_DNS_LABEL=$(terraform output -json | jq -r '.vcn_dns_label.value')
-WORKER_IP=$(terraform output -json | jq -r '.worker_ip.value')
-WORKER_HOSTNAME=$(terraform output -json | jq -r '.worker_hostname.value')
-WORKER_IP2=$(terraform output -json | jq -r '.worker_ip2.value')
-WORKER_HOSTNAME2=$(terraform output -json | jq -r '.worker_hostname2.value')
-OS_USER=$(terraform output -json | jq -r '.os_user.value')
-SSH_PRIVATE_KEY=$(terraform output -json | jq -r '.ssh_private_key_path.value')
+TF_OUTPUT=$(terraform output -json)
+MASTER_IP=$(echo $TF_OUTPUT | jq -r '.master_ip.value')
+MASTER_HOSTNAME=$(echo $TF_OUTPUT | jq -r '.master_hostname.value')
+MASTER_SUBNET_DNS_LABEL=$(echo $TF_OUTPUT | jq -r '.master_subnet_dns_label.value')
+VCN_DNS_LABEL=$(echo $TF_OUTPUT | jq -r '.vcn_dns_label.value')
+WORKER_IP=$(echo $TF_OUTPUT | jq -r '.worker_ip.value')
+WORKER_HOSTNAME=$(echo $TF_OUTPUT | jq -r '.worker_hostname.value')
+WORKER_IP2=$(echo $TF_OUTPUT | jq -r '.worker_ip2.value')
+WORKER_HOSTNAME2=$(echo $TF_OUTPUT | jq -r '.worker_hostname2.value')
+OS_USER=$(echo $TF_OUTPUT | jq -r '.os_user.value')
+SSH_PRIVATE_KEY=$(echo $TF_OUTPUT | jq -r '.ssh_private_key_path.value')
 
 MASTER_FQDN="${MASTER_HOSTNAME}.${MASTER_SUBNET_DNS_LABEL}.${VCN_DNS_LABEL}.oraclevcn.com"
 
