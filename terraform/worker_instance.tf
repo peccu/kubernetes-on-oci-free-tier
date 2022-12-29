@@ -8,6 +8,10 @@ resource "oci_core_instance" "worker" {
     source_type = "image"
   }
   shape               = var.shape
+  shape_config {
+    memory_in_gbs = var.shape_worker_memory
+    ocpus         = var.shape_worker_ocpu
+  }
 
   create_vnic_details {
     subnet_id        = oci_core_subnet.worker.id

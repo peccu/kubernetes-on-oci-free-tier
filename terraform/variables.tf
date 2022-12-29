@@ -14,3 +14,7 @@ variable "private_key_password" {}
 variable "os_user" {}
 variable "image_id" {}
 variable "shape" {}
+variable "shape_master_ocpu" {}
+variable "shape_master_memory" {}
+variable "shape_worker_ocpu" {}
+variable "shape_worker_memory" {}

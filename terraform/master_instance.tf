@@ -10,6 +10,10 @@ resource "oci_core_instance" "master" {
     source_type = "image"
   }
   shape               = var.shape
+  shape_config {
+    memory_in_gbs = var.shape_master_memory
+    ocpus         = var.shape_master_ocpu
+  }
 
   create_vnic_details {
     subnet_id        = oci_core_subnet.master.id
