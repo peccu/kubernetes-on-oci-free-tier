@@ -6,6 +6,7 @@ private_key_path     = ""
 private_key_password = ""
 fingerprint          = ""
 region               = "ap-tokyo-1"
+ssh_private_key_path = ""
 ssh_public_key_path  = ""
 cluster_name         = ""
 

@@ -17,3 +17,7 @@ output "worker_hostname" {
 output "os_user" {
   value = var.os_user
 }
+
+output "ssh_private_key_path" {
+  value = var.ssh_private_key_path
+}

@@ -13,6 +13,7 @@ MASTER_HOSTNAME=$(terraform output -json | jq -r '.master_hostname.value')
 WORKER_IP=$(terraform output -json | jq -r '.worker_ip.value')
 WORKER_HOSTNAME=$(terraform output -json | jq -r '.worker_hostname.value')
 OS_USER=$(terraform output -json | jq -r '.os_user.value')
+SSH_PRIVATE_KEY=$(terraform output -json | jq -r '.ssh_private_key_path.value')
 
 cat > ../ansible-kubeadm/hosts.ini << EOF
 [master]
@@ -28,6 +29,7 @@ worker
 [all:vars]
 ansible_user=${OS_USER}
 control_plane_endpoint_ip=${MASTER_IP}
+ansible_ssh_private_key_file=${SSH_PRIVATE_KEY}
 
 EOF
 

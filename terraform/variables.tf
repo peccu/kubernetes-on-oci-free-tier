@@ -5,6 +5,7 @@ variable "fingerprint" {}
 variable "private_key_path" {}
 variable "region" {}
 variable "cluster_name" {}
+variable "ssh_private_key_path"  {}
 variable "ssh_public_key_path"  {}
 variable "vcn_cidr_block" {}
 variable "master_subnet_cidr_block" {}
