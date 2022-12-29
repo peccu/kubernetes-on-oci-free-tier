@@ -5,6 +5,14 @@
     pkg:
       - curl
 
+- name: disable SELinux
+  command: setenforce 0
+
+- name: Ensure SELinux is set to enforcing mode
+  ansible.builtin.lineinfile:
+    path: /etc/selinux/config
+    regexp: '^SELINUX='
+    line: SELINUX=permissive
 
 - name: "Create kubernetes.repo"
   copy:
