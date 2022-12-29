@@ -14,12 +14,13 @@
 - name: Read values from all system directories
   shell: sysctl --system
 
+- name: Add containerd repo
+  shell: dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
 - name: Install containerd
-  ansible.builtin.apt:
-    update_cache: yes
-    cache_valid_time: 3600
+  ansible.builtin.dnf:
     pkg:
-      - containerd
+      - containerd.io
 
 - name: "Create containerd config directory"
   file:
