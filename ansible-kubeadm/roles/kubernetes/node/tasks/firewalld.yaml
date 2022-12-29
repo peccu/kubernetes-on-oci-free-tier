@@ -1,0 +1,36 @@
+---
+
+- name: Set policy for firewalld
+  ansible.posix.firewalld:
+    port: 10250/tcp
+    permanent: yes
+    state: enabled
+
+- name: Set policy for firewalld
+  ansible.posix.firewalld:
+    port: 10255/tcp
+    permanent: yes
+    state: enabled
+
+- name: Set policy for firewalld
+  ansible.posix.firewalld:
+    port: 8472/udp
+    permanent: yes
+    state: enabled
+
+- name: Set policy for firewalld
+  ansible.posix.firewalld:
+    port: 30000-32767/tcp
+    permanent: yes
+    state: enabled
+
+- name: Set policy for firewalld
+  ansible.posix.firewalld:
+    masquerade: yes
+    permanent: yes
+    state: enabled
+
+- name: Reload service firewalld, in all cases
+  ansible.builtin.systemd:
+    name: firewalld
+    state: reloaded

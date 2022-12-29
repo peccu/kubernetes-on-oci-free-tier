@@ -60,24 +60,3 @@
     name: kubelet
     daemon_reload: yes
     enabled: yes
-
-- name: Set the policy for the INPUT chain to ACCEPT
-  ansible.builtin.iptables:
-    chain: INPUT
-    policy: ACCEPT
-
-- name: Set the policy for the OUTPUT chain to ACCEPT
-  ansible.builtin.iptables:
-    chain: OUTPUT
-    policy: ACCEPT
-
-- name: Set the policy for the FORWARD chain to ACCEPT
-  ansible.builtin.iptables:
-    chain: FORWARD
-    policy: ACCEPT
-
-- name: Iptables flush filter
-  ansible.builtin.iptables:
-    chain: "{{ item }}"
-    flush: yes
-  with_items:  [ 'INPUT', 'FORWARD', 'OUTPUT' ]
