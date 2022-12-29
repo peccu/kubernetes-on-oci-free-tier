@@ -18,6 +18,13 @@ cp terraform/main.tfvars.example terraform/main.tfvars
 ```
 Set the parameters.
 
+## add SSH Private key to ssh-agent (if need)
+
+```bash
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa-for-oci
+```
+
 ## Create Cluster
 
 ### kubeadm
