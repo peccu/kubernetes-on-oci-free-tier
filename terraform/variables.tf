@@ -10,7 +10,9 @@ variable "ssh_public_key_path"  {}
 variable "vcn_cidr_block" {}
 variable "master_subnet_cidr_block" {}
 variable "worker_subnet_cidr_block" {}
-variable "private_key_password" {}
+variable "private_key_password" {
+  sensitive = true
+}
 variable "os_user" {}
 variable "image_id" {}
 variable "shape" {}
