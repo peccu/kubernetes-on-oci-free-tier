@@ -7,7 +7,7 @@
 - name: Copy Kubeadm Configuration
   template:
     src: kubeadm-config.yaml.j2
-    dest: "/etc/kubernetes/kubeadm-config.yaml"  
+    dest: "/etc/kubernetes/kubeadm-config.yaml"
 
 - name: Init Kubernetes cluster
   when: reset_cluster is succeeded
