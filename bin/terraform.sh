@@ -12,6 +12,8 @@ MASTER_IP=$(terraform output -json | jq -r '.master_ip.value')
 MASTER_HOSTNAME=$(terraform output -json | jq -r '.master_hostname.value')
 WORKER_IP=$(terraform output -json | jq -r '.worker_ip.value')
 WORKER_HOSTNAME=$(terraform output -json | jq -r '.worker_hostname.value')
+WORKER_IP2=$(terraform output -json | jq -r '.worker_ip2.value')
+WORKER_HOSTNAME2=$(terraform output -json | jq -r '.worker_hostname2.value')
 OS_USER=$(terraform output -json | jq -r '.os_user.value')
 SSH_PRIVATE_KEY=$(terraform output -json | jq -r '.ssh_private_key_path.value')
 
@@ -21,6 +23,7 @@ ${MASTER_HOSTNAME} ansible_host=${MASTER_IP}
 
 [worker]
 ${WORKER_HOSTNAME} ansible_host=${WORKER_IP}
+${WORKER_HOSTNAME2} ansible_host=${WORKER_IP2}
 
 [kube_cluster:children]
 master
