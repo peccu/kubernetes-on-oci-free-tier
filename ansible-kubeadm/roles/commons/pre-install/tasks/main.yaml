@@ -40,7 +40,7 @@
     replace: '#\1\2\3swap\4'
     backup: yes
 
-- name: modprebe br_netfilter
+- name: modprobe br_netfilter
   command: modprobe br_netfilter
 
 - name: Disable swappiness and pass bridged IPv4 traffic to iptable's chains
