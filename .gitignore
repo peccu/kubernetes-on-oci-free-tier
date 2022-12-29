@@ -35,3 +35,4 @@ ansible-k0s/hosts.ini
 ansible-kubeadm/hosts.ini
 hosts-sample
 .idea/**
+*~
