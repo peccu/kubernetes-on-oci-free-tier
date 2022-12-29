@@ -43,6 +43,9 @@
 - name: modprobe br_netfilter
   command: modprobe br_netfilter
 
+- name: modprobe overlay
+  command: modprobe overlay
+
 - name: Disable swappiness and pass bridged IPv4 traffic to iptable's chains
   sysctl:
     name: "{{ item.name }}"
