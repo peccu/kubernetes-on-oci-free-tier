@@ -5,8 +5,8 @@ Setup Kubernetes on OCI Free Tier
 
 |Tool|Version|
 |---|---|
-|Terraform|0.12.26|
-|Ansible|2.9.10|
+|Terraform|1.3.6 (tested)|
+|Ansible|2.11.12 (tested)|
 |jq|1.6|
 
 # How To
