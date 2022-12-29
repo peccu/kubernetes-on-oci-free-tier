@@ -33,4 +33,5 @@ ansible-kubeadm/hosts.ini
 ansible-k3s/hosts.ini
 ansible-k0s/hosts.ini
 ansible-kubeadm/hosts.ini
+hosts-sample
 .idea/**

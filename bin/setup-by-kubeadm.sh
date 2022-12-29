@@ -7,3 +7,4 @@ cd `dirname ${0}`
 # Waiting Instance
 sleep 30
 ./ansible-kubeadm.sh
+./message.sh

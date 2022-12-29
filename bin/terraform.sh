@@ -41,3 +41,7 @@ ansible_ssh_private_key_file=${SSH_PRIVATE_KEY}
 EOF
 
 cp ../ansible-kubeadm/hosts.ini ../ansible-k3s/hosts.ini
+
+cat > ../hosts-sample <<EOF
+${MASTER_IP}  ${MASTER_FQDN}
+EOF
